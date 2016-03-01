@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<!-- Direct Connect -->
+    	<!-- Database connection properties - Driver, URL, user, password -->
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://10.21.82.38:53200;databaseName=PMAP</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">$Password123</property>
+        <property name="hibernate.default_catalog">PMAP</property>
+        <property name="hibernate.default_schema">dbo</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+         
+        <!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
+        <property name="hibernate.current_session_context_class">thread</property>
+         
+        <!-- Mapping with model class containing annotations -->
+        <mapping class="com.journaldev.hibernate.model.Employer"/>
+    </session-factory>
+</hibernate-configuration>
