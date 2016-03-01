@@ -10,7 +10,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="Employer", schema = "dbo")
-public class Employer
+public class Employer implements java.io.Serializable
 {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

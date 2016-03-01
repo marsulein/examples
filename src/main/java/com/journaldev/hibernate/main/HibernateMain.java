@@ -46,24 +46,6 @@ public class HibernateMain
 	        System.out.println(employer.toString());
 	    }
         
-        /*String queryText = "SELECT DISTINCT a.* AS user, b.value AS value FROM TABLE_A a, TABLE_B b";
-        SQLQuery sqlQuery = aSession.createSQLQuery( queryTxt );
-        sqlQuery.addScalar( "value", IntegerType.INSTANCE );
-        sqlQuery.setResultTransformer( Transformers.aliasToBean( ValueDto.class ) );
-        return sqlQuery.list();*/
-        
-        
-        /*Transaction tx = session.beginTransaction();
-        SQLQuery query = session.createSQLQuery("select emp_id, emp_name, emp_salary from Employee");
-        List<Object[]> rows = query.list();
-        for(Object[] row : rows){
-            Employee emp = new Employee();
-            emp.setId(Long.parseLong(row[0].toString()));
-            emp.setName(row[1].toString());
-            emp.setSalary(Double.parseDouble(row[2].toString()));
-            System.out.println(emp);
-        }*/
-        
         session.getTransaction().commit();
         //terminate session factory, otherwise program won't end
         sessionFactory.close();
