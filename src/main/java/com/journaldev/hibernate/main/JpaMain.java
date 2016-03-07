@@ -35,7 +35,7 @@ public class JpaMain {
 			List<Employer> Employers = entityManager.createQuery("from Employer").getResultList();
 			for (Iterator<Employer> iterator = Employers.iterator(); iterator.hasNext();) {
 				Employer employer = (Employer) iterator.next();
-				System.out.println(employer.getName());
+				System.out.println(employer.toString());
 			}
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
